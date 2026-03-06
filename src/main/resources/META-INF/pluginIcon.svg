@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <g fill="currentColor">
+    <!-- Simple flow chart icon -->
+    <rect x="1" y="2" width="3" height="3" rx="0.5" fill-opacity="0.8"/>
+    <rect x="12" y="11" width="3" height="3" rx="0.5" fill-opacity="0.8"/>
+    <rect x="6" y="6" width="4" height="4" rx="0.5" fill-opacity="0.6"/>
+    <path d="M 2.5 5 L 2.5 7 Q 2.5 8 3.5 8 L 6 8" stroke="currentColor" stroke-width="1" fill="none"/>
+    <path d="M 10 8 L 12.5 8 Q 13.5 8 13.5 9 L 13.5 11" stroke="currentColor" stroke-width="1" fill="none"/>
+    <circle cx="8" cy="8" r="0.7"/>
+  </g>
+</svg>

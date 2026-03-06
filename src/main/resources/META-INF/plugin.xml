@@ -1,0 +1,59 @@
+<idea-plugin>
+    <id>com.example.testflow-generator</id>
+    <name>TestFlow Generator</name>
+    <vendor email="support@example.com" url="https://example.com">Example</vendor>
+
+    <description><![CDATA[
+        <p>A plugin that generates test flows from natural language documentation using AI.</p>
+        <p>Features:</p>
+        <ul>
+            <li>Parse documentation with AI to generate structured test flows</li>
+            <li>Support for HTTP requests and script execution steps</li>
+            <li>Export to JSON and plain text formats</li>
+            <li>Execute test flows directly within the IDE</li>
+            <li>Configurable AI providers (OpenAI, Anthropic, Ollama)</li>
+        </ul>
+    ]]></description>
+
+    <change-notes><![CDATA[
+        <h3>1.0.0</h3>
+        <ul>
+            <li>Initial release</li>
+            <li>AI-powered test flow generation</li>
+            <li>Multi-format export (JSON, TXT)</li>
+            <li>Test execution engine</li>
+        </ul>
+    ]]>
+    </change-notes>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Tool Window -->
+        <toolWindow id="TestFlow" factoryClass="com.example.testflow.ui.TestFlowToolWindowFactory"
+                    anchor="right" icon="/META-INF/pluginIcon.svg"/>
+
+        <!-- Application Settings -->
+        <applicationConfigurable parentId="tools"
+                                 instance="com.example.testflow.ui.components.SettingsConfigurable"
+                                 id="com.example.testflow.settings"
+                                 displayName="TestFlow Generator"/>
+
+        <!-- Application Service -->
+        <applicationService serviceImplementation="com.example.testflow.settings.SettingsState"/>
+    </extensions>
+
+    <actions>
+        <!-- Add action to Tools menu -->
+        <group id="TestFlow.Group">
+            <action id="TestFlow.Generate"
+                    class="com.example.testflow.actions.GenerateFlowAction"
+                    text="Generate Test Flow"
+                    description="Generate test flow from documentation"
+                    icon="/META-INF/pluginIcon.svg">
+                <add-to-group group-id="ToolsMenu" anchor="first"/>
+            </action>
+        </group>
+    </actions>
+</idea-plugin>
